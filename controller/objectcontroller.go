@@ -154,7 +154,7 @@ func WriteFile(g *gin.Context) {
 		fmt.Println("file length:::", len(data))
 
 		var d1 = []byte("sdssddssdsdssdsdsddsodos")
-		err2 := ioutil.WriteFile("./run/mount/tmp/m1", d1, 0666)
+		err2 := ioutil.WriteFile("/mnt/test/m1", d1, 0666)
 		if err2 != nil {
 
 		}
