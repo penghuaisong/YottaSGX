@@ -16,6 +16,7 @@ func InitRouter() (router *gin.Engine) {
 	v1 := router.Group("/api/v1")
 	{
 		v1.GET("/getInfo", controller.GetInfo)
+		v1.POST("/insertuser", controller.Register)
 
 	}
 

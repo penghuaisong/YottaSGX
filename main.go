@@ -10,11 +10,14 @@ import (
 	"github.com/penghuaisong/YottaSGX/routers"
 	"github.com/prometheus/common/log"
 	"github.com/robfig/cron"
+	"github.com/yottachain/YTCoreService/api"
 )
 
 func main() {
 	log.Info(time.Now().Format("2006-01-02 15:04:05") + "strart ......")
 	flag.Parse()
+
+	api.StartApi()
 
 	router := routers.InitRouter()
 	cronInit()
