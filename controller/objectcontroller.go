@@ -141,6 +141,7 @@ func GetInfo(g *gin.Context) {
 //WriteFile  test write file
 func WriteFile(g *gin.Context) {
 	directory := g.Query("path")
+	fmt.Printf("path::::" + directory)
 
 	isExist := CheckFileIsExist(directory)
 
