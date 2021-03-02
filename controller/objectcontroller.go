@@ -150,6 +150,8 @@ func WriteFile(g *gin.Context) {
 	if isExist {
 		data := ReadFile(directory)
 
+		fmt.Println("file length:::", len(data))
+
 		SaveFile("/mnt/test/mm", data)
 	}
 
