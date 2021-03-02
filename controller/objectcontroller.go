@@ -148,7 +148,7 @@ func WriteFile(g *gin.Context) {
 	isExist := CheckFileIsExist(directory)
 	fmt.Println("文件是否存在:", isExist)
 
-	if isExist {
+	if !isExist {
 		data := ReadFile(directory)
 
 		fmt.Println("file length:::", len(data))
