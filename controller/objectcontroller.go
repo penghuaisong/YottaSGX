@@ -90,6 +90,7 @@ func CheckFileIsExist(filename string) bool {
 
 func SaveFile(filename string, data []byte) bool {
 	var err error
+	fmt.Println("saveFile::::", filename)
 	if len(filename) > 0 && data != nil {
 		dir := filepath.Dir(filename)
 		if MakeDir(dir) != nil {
@@ -116,6 +117,7 @@ func ReadFile(filename string) []byte {
 	}
 	defer file.Close()
 
+	fmt.Println("fileName:",filename)
 	buf := make([]byte, 1024)
 	for {
 		n, err := file.Read(buf)
@@ -147,7 +149,7 @@ func WriteFile(g *gin.Context) {
 
 	fmt.Println("isExist:::", isExist)
 
-	if isExist {
+	if !isExist {
 		data := ReadFile(directory)
 
 		SaveFile("/mnt/test/mm", data)
