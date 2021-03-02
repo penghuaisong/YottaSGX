@@ -144,6 +144,8 @@ func WriteFile(g *gin.Context) {
 
 	isExist := CheckFileIsExist(directory)
 
+	fmt.Println("isExist:::", isExist)
+
 	if isExist {
 		data := ReadFile(directory)
 
