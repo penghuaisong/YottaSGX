@@ -117,7 +117,7 @@ func ReadFile(filename string) []byte {
 	}
 	defer file.Close()
 
-	fmt.Println("fileName:",filename)
+	fmt.Println("fileName:", filename)
 	buf := make([]byte, 1024)
 	for {
 		n, err := file.Read(buf)
@@ -147,9 +147,7 @@ func WriteFile(g *gin.Context) {
 
 	isExist := CheckFileIsExist(directory)
 
-	fmt.Println("isExist:::", isExist)
-
-	if !isExist {
+	if isExist {
 		data := ReadFile(directory)
 
 		SaveFile("/mnt/test/mm", data)
