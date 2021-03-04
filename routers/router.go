@@ -17,7 +17,8 @@ func InitRouter() (router *gin.Engine) {
 	{
 		v1.GET("/getInfo", controller.GetInfo)
 		v1.POST("/insertuser", controller.Register)
-		v1.GET("/writeFile", controller.WriteFile)
+		v1.POST("/upload", controller.UploadFile)
+		v1.GET("/download", controller.DownloadFile)
 
 	}
 
