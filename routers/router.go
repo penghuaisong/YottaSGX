@@ -15,10 +15,11 @@ func InitRouter() (router *gin.Engine) {
 
 	v1 := router.Group("/api/v1")
 	{
-		v1.GET("/getInfo", controller.GetInfo)
-		v1.POST("/insertuser", controller.Register)
-		v1.POST("/upload", controller.UploadFile)
+		// v1.GET("/getInfo", controller.GetInfo)
+		// v1.POST("/insertuser", controller.Register)
+		// v1.POST("/upload", controller.UploadFile)
 		v1.GET("/download", controller.DownloadFile)
+		v1.GET("/writeFile", controller.WriteFile)
 
 	}
 
